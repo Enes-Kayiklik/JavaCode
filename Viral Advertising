@@ -1,0 +1,31 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    static int numOfDay = 0;
+    static int sum=0;
+
+
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        int day = in.nextInt();
+        System.out.println((int)(liked(Math.floor(5 / 2) * 3,day)));
+    }
+
+    private static double liked(double shared,int day)
+    {
+        numOfDay++;
+        sum+=shared/3;
+        if (numOfDay==day)
+        {
+            return sum;
+        }
+        return liked(Math.floor(shared / 2) * 3,day);
+    }
+}
