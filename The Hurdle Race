@@ -1,0 +1,48 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        Scanner in = new Scanner(System.in);
+        int num;
+        int k;
+        int big;
+        int howMany=0;
+
+        num=in.nextInt();
+        k=in.nextInt();
+
+        int[] height=new int[num];
+
+        for(int i=0;i<num;i++)
+        {
+            height[i]=in.nextInt();
+        }
+        big=height[0];
+        for(int i=0;i<height.length;i++)
+        {
+            if(height[i]>big)
+            {
+                big=height[i];
+            }
+            if(height[i]>k)
+            {
+                howMany++;
+            }
+        }
+
+        if(howMany!=0)
+        {
+            System.out.println(big-k);
+        }
+        else
+        {
+            System.out.println(0);
+        }
+    }
+}
