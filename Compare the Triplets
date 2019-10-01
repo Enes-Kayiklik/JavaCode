@@ -1,0 +1,42 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        Scanner in =new Scanner(System.in);
+
+        int[] Alice=new int[3];
+        int[] Bob=new int[3];
+        int Alice_score=0;
+        int Bob_score=0;
+
+        for(int i=0;i<Alice.length;i++)  
+        {
+            Alice[i]=in.nextInt();
+        }
+
+        for(int i=0;i<Bob.length;i++)
+        {
+            Bob[i]=in.nextInt();
+        }
+
+        for(int i=0;i<3;i++)
+        {
+            if(Alice[i]>Bob[i])
+            {
+                Alice_score++;
+            }
+            else if(Bob[i]>Alice[i]) 
+            {
+                Bob_score++;
+            }
+        }
+
+        System.out.println(Alice_score+" "+Bob_score);
+    }
+}
