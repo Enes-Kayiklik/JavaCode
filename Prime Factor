@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+
+        while(true)
+        {
+
+            System.out.println("Enter a number");
+            int n=in.nextInt();
+
+            System.out.println("------Prime multipliers of the entered number-----");
+
+            for(int i=2;i<=n;i++)
+            {
+                if(n%i==0)
+                {
+                    int counter=0;
+                    for(int j=2;j<i;j++)
+                    {
+                        if(i%j==0)
+                        {
+                            counter++;
+                        }
+
+                    }
+                    if(counter==0)
+                    {
+                        System.out.println(i);
+                    }
+                }
+            }
+        }
+
+    }
+}
