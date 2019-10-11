@@ -1,0 +1,61 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+               Scanner in = new Scanner(System.in);
+
+        int length;//length of array
+        int[] array=new int[500];
+        int k=0;
+        int min;
+
+        length = in.nextInt();
+        int[] arr=new int[length];
+
+        for(int i=0;i<arr.length;i++)
+        {
+            arr[i]=in.nextInt();
+        }
+
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j=i+1;j<arr.length;j++)
+            {
+                if(arr[i]==arr[j])
+                {
+                    array[k]=Math.abs(i-j);
+                    k++;
+                }
+            }
+        }
+
+        min=array[0];
+
+        for(int i=0;i<array.length;i++)
+        {
+            if(array[i]!=0)
+            {
+                if(array[i]<min)
+                {
+                    min=array[i];
+                }
+            }
+
+        }
+        if(array[0]==0)
+        {
+            System.out.println(-1);
+        }
+        else
+        {
+            System.out.println(min);
+        }
+        
+    }
+}
