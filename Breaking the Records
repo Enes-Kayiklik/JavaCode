@@ -1,0 +1,43 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        Scanner in = new Scanner(System.in);
+
+        int length;//length of array
+        int highest;
+        int lowest;
+        int lowestCounter=0;
+        int highestCounter=0;
+
+        length = in.nextInt();
+        int[] arr=new int[length];
+
+        for(int i=0;i<arr.length;i++)
+        {
+            arr[i]=in.nextInt();
+        }
+        highest=arr[0];
+        lowest=arr[0];
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]<lowest)
+            {
+                lowestCounter++;
+                lowest=arr[i];
+            }
+            if(arr[i]>highest)
+            {
+                highestCounter++;
+                highest=arr[i];
+            }
+        }
+        System.out.println(highestCounter+" "+lowestCounter);
+    }
+}
