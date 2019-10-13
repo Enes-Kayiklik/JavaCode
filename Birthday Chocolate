@@ -1,0 +1,45 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) throws IOException {Scanner in = new Scanner(System.in);
+
+        int length;//length of array
+        int day;
+        int month;
+        int sum=0;
+        int counter=0;
+
+        length = in.nextInt();
+
+        int[] arr=new int[length];
+
+        for(int i=0;i<arr.length;i++)
+        {
+            arr[i]=in.nextInt();
+        }
+
+        day=in.nextInt();
+        month=in.nextInt();
+
+        for(int i=0;i<arr.length-month+1;i++)
+        {
+            for(int j=i;j<i+month;j++)
+            {
+                sum+=arr[j];
+            }
+            if(sum==day)
+            {
+                counter++;
+            }
+            sum=0;
+        }
+
+        System.out.println(counter);
+    }
+}
