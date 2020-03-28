@@ -1,0 +1,49 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in =new Scanner(System.in);
+       int n=in.nextInt();
+        int[] ar=new int[n];
+        int sayac=0;
+        ArrayList<Integer> list=new ArrayList<>();
+
+
+        for(int i=0;i<n;i++)
+        {
+            ar[i]=in.nextInt();
+        }
+        Arrays.sort(ar);
+        list.add(ar[0]);
+        for(int i=0;i<n-1;i++)
+        {
+            if(ar[i]!=ar[i+1])
+            {
+                list.add(ar[i+1]);
+            }
+        }
+        int[] array=new int[list.size()];
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<list.size();j++)
+            {
+                if(ar[i]==list.get(j))
+                {
+                    array[j]++;
+                }
+            }
+        }
+        for(int i=0;i<list.size();i++)
+        {
+            sayac+=array[i]/2;
+        }
+        System.out.println(sayac);
+    }
+}
