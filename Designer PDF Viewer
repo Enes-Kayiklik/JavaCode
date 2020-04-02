@@ -1,0 +1,43 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner in =new Scanner(System.in);
+
+        int[] h=new int[26];
+        String word;
+        int biggest=1;
+        for(int i=0;i<h.length;i++)
+        {
+            h[i]=in.nextInt();
+        }
+
+        word=in.next();
+        char[] wordCharArr=word.toCharArray();
+        char[] alphabet={'a','b','c','d','e','f','g',
+                        'h','i','j','k','l','m','n',
+                        'o','p','q','r','s','t','u',
+                        'v','w','x','y','z'};
+        for(int i=0;i<wordCharArr.length;i++)
+        {
+            for(int j=0;j<h.length;j++)
+            {
+                if(wordCharArr[i]==alphabet[j])
+                {
+                    if(h[j]>biggest)
+                    {
+                        biggest=h[j];
+                    }
+                }
+            }
+        }
+
+        System.out.println(biggest*wordCharArr.length);
+    }
+}
